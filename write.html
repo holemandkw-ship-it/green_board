@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>게시판</title>
+    </head>
+    <body>
+        <header>
+            <a class="brand" href="index.html">게시판</a>
+            <nav>
+                <a href="index.html">게시판</a>
+                <a class="write-link" href="write.html">글쓰기</a>
+                <a class="login-link" href="login.html">로그인</a>
+                <button class="logout-button" type="button">로그아웃</button>
+            </nav>
+        </header>
+        <main>
+            <h1>글쓰기</h1>
+            <form id="post-form">
+                <label>제목</label>
+                <input id="title" type="text" required>
+                <label>본문</label>
+                <textarea id="content" required></textarea>
+                <button type="submit">게시글 등록</button>
+                <a href="index.html">목록으로</a>
+            </form>
+        </main>
+        <footer>
+            게시판 실습
+        </footer>
+    </body>
+</html>
