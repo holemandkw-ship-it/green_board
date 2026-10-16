@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0;
     background: #f4f7f3;
     color: #243b2d;
@@ -25,10 +25,10 @@ main {
 }
 
 a {
-    color: #23633d;
+    color: #23633d
 }
 
-h1,h2{
+h1, h2 {
     line-height: 1.4;
 }
 
@@ -66,11 +66,11 @@ button {
     transition: background-color 0.15s, transform 0.15s;
 }
 
-button:hover:not(:disabled){
+button:hover:not(:disabled) {
     background: #174c2c;
 }
 
-button:active:not(:disabled){
+button:active:not(:disabled) {
     transform: scale(0.98);
 }
 
@@ -153,24 +153,3 @@ a:hover {
         width: 100%;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    

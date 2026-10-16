@@ -4,11 +4,13 @@
         <meta charset="UTF-8">
         <title>게시판</title>
         <link rel="stylesheet" href="style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script defer src="js/data.js"></script>
+        <script defer src="js/detail.js"></script>
     </head>
     <body>
         <header>
-             <!--헤더 영역-->
+            <!--헤더 영역-->
             <a class="brand" href="index.html">게시판</a>
             <nav>
                 <a href="index.html">게시판</a>
@@ -19,32 +21,26 @@
         </header>
         <main>
             <article>
-                <h1 id="post-title">첫 번째 게시글</h1>
-                <p id="post-meta" class="meta"></p>
-                <p id="post-content"></p>
+                <h1 id="post-title"></h1>
+                <p id="post-meta" class="meta">학생 / 2026-10-03</p>
+                <p id="post-content">게시판 실습 내용입니다</p>
             </article>
             <a href="index.html">목록으로</a>
             <section id="comments-section">
                 <h2>댓글</h2>
-                <!--댓글 목록 영역-->>
+                <!--댓글 목록 영역-->
                 <ul id="comment-list">
-                    <li>
-                        <strong>학생</strong>
-                        <p>첫 댓글입니다</p>
-                    </li>
                 </ul>
                 <!--댓글 입력창-->
                 <form id="comment-form">
-                    <label>댓글 내용</label>
+                    <lable>댓글 내용</lable>
                     <textarea id="comment-content" name="content" required></textarea>
                     <button type="submit">댓글 등록</button>
                 </form>
             </section>
-
         </main>
         <footer>
-
+            게시판 실습
         </footer>
-
     </body>
 </html>
