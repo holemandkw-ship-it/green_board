@@ -3,7 +3,7 @@ function renderPosts (posts){
 
     // 기존 이미 그려진(렌더링된) 댓글 요소들 모두 제거
     list.replaceChildren(); 
-    
+
     if(posts.length === 0){
         list.textContent = "아직 게시글이 없습니다.";
     }
@@ -26,7 +26,7 @@ function renderPosts (posts){
 // 글 상세 페이지 만드는 함수
 function renderPost(post){
     document.querySelector("#post-title").textContent = post.title;
-    document.querySelector("#post-meta").textContent = `${post.author} | ${post.createdDatetime}`;
+    document.querySelector("#post-meta").textContent = `${post.authorNickname} | ${post.createdDatetime}`;
     document.querySelector("#post-content").textContent = post.content;
 }
 
