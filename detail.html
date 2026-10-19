@@ -5,8 +5,10 @@
         <title>게시판</title>
         <link rel="stylesheet" href="style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script defer src="js/data.js"></script>
+        <script defer src="js/storage.js"></script>
+        <script defer src="js/render.js"></script>
         <script defer src="js/detail.js"></script>
+        
     </head>
     <body>
         <header>
@@ -29,11 +31,12 @@
             <section id="comments-section">
                 <h2>댓글</h2>
                 <!--댓글 목록 영역-->
+                <p id="comment-message"></p>
                 <ul id="comment-list">
                 </ul>
                 <!--댓글 입력창-->
                 <form id="comment-form">
-                    <lable>댓글 내용</lable>
+                    <label for="comment-content">댓글 내용</label>
                     <textarea id="comment-content" name="content" required></textarea>
                     <button type="submit">댓글 등록</button>
                 </form>

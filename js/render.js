@@ -28,6 +28,8 @@ function renderPost(post) {
 
 function renderComments(comments) {
     const list = document.querySelector("#comment-list");
+
+    list.replaceChildren();
     if(comments.length === 0){
         list.textContent = "등록된 댓글이 없습니다";
     }
