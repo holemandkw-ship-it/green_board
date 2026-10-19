@@ -1,4 +1,5 @@
 //게시글 작성 화면 JS
+requireLogin();
 
 const form = document.querySelector("#post-form")
 
