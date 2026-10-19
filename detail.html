@@ -5,11 +5,10 @@
         <title>게시판</title>
         <link rel="stylesheet" href="style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script defer src="js/auth.js"></script>
         <script defer src="js/storage.js"></script>
         <script defer src="js/render.js"></script>
         <script defer src="js/detail.js"></script>
-        <script defer src="auth.js"></script>
-        
     </head>
     <body>
         <header>
@@ -25,8 +24,8 @@
         <main>
             <article>
                 <h1 id="post-title"></h1>
-                <p id="post-meta" class="meta">학생 / 2026-10-03</p>
-                <p id="post-content">게시판 실습 내용입니다</p>
+                <p id="post-meta" class="meta"></p>
+                <p id="post-content"></p>
             </article>
             <a href="index.html">목록으로</a>
             <section id="comments-section">
@@ -37,7 +36,7 @@
                 </ul>
                 <!--댓글 입력창-->
                 <form id="comment-form">
-                    <label for="comment-content">댓글 내용</label>
+                    <lable>댓글 내용</lable>
                     <textarea id="comment-content" name="content" required></textarea>
                     <button type="submit">댓글 등록</button>
                 </form>
