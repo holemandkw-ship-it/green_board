@@ -25,6 +25,8 @@ async function logout() {
         
         // HTTP 상태코드가 200이 아니거나, API 성공 여부가 실패인 경우 예외처리
         if (!response.ok) {
+            localStorage.removeItem("accessToken");
+            location.replace("login.html");
             throw new Error("로그아웃에 실패했습니다.");
         }
 
