@@ -1,5 +1,9 @@
 function renderPosts (posts){
     const list = document.querySelector("#post-list");
+
+    // 기존 이미 그려진(렌더링된) 댓글 요소들 모두 제거
+    list.replaceChildren(); 
+    
     if(posts.length === 0){
         list.textContent = "아직 게시글이 없습니다.";
     }
