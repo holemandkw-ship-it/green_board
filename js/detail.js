@@ -24,18 +24,16 @@ async function loadPost() {
 }
 document.querySelector("#comments-section").hidden = true;
     
+    if(requireLogin()){
+        if(Number.isSafeInteger(postId) && postId > 0){
+        loadPost();
 
-
-if(requireLogin()){
-    if(Number.isSafeInteger(postId) && postId > 0){
-    loadPost();
-
-    //let filteredComments = comments.filter(comment => comment.boardId === postId);
-    //renderComments(filteredComments);
-}else {
-    document.querySelector("#post-message").textContent = "잘못된 게시글 번호입니다.";
-    document.querySelector("#comments-section").hidden = true;
-}
+        //let filteredComments = comments.filter(comment => comment.boardId === postId);
+        //renderComments(filteredComments);
+    }else {
+        document.querySelector("#post-message").textContent = "잘못된 게시글 번호입니다.";
+        document.querySelector("#comments-section").hidden = true;
+    }
 }
 
 
