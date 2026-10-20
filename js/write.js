@@ -23,19 +23,7 @@ async function savePost(event) {
     }
 
     try {
-        const response = await fetch(
-            "http://127.0.0.1:8080/api/board",
-            {
-                method: "POST",
-                headers:{...getAuthHeaders(), "Content-Type": "application/json"},
-                body: JSON.stringify({title: title, content: content})
-            }
-        );
-        const result = await response.json();
-
-        if (!response.ok || !result.success) {
-            throw new Error(result.message || "게시글 등록 실패") 
-        }
+      await apiRequest("/board","POST",{title,content})
 
         // index.html 경로로 이동
         location.href = "index.html";

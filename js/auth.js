@@ -18,17 +18,18 @@ document.querySelector(".logout-button").addEventListener("click", logout)
 
 async function logout() {
     try {
-        const response = await fetch("http://127.0.0.1:8080/api/user/logout", {
-            method: "POST", 
-            headers: {...getAuthHeaders(), "Content-Type": "application/json"}
-        });
-        
+        //const response = await fetch("http://127.0.0.1:8080/api/user/logout", {
+         //   method: "POST", 
+           // headers: {...getAuthHeaders(), "Content-Type": "application/json"}
+        //});
+        const accessToken = localStorage.getItem("accessToken");
+        await apiRequest("/user/logout","POST",{accessToken}) 
         // HTTP 상태코드가 200이 아니거나, API 성공 여부가 실패인 경우 예외처리
-        if (!response.ok) {
-            localStorage.removeItem("accessToken");
-            location.replace("login.html");
-            throw new Error("로그아웃에 실패했습니다.");
-        }
+       // if (!response.ok) {
+          //  localStorage.removeItem("accessToken");
+           // location.replace("login.html");
+          //  throw new Error("로그아웃에 실패했습니다.");
+       // }
 
         // 로컬스토리지 내 토큰 제거
         localStorage.removeItem("accessToken");
