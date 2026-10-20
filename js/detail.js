@@ -7,24 +7,45 @@ async function loadPost() {
        const post = await apiRequest(`/board/${postId}`);
         renderPost(post);
         document.querySelector("#post-message").textContent = "";
+        return true;
     }catch (error) {
         document.querySelector("#post-title").textContent = "게시글 조회 실패";
         document.querySelector("#post-content").textContent = "";
         document.querySelector("#post-message").textContent = error.message;
+        return false;
        
     }
 }
-document.querySelector("#comments-section").hidden = true;
+
+async function loadComments() {
+    try{
+        const comments = await apiRequest(`/board/${postId}/comment`);
+        renderComments(comments)
+    }catch (error) {
+        document.querySelector("#comment-message").textContent = error.message;
+    }
+}
+
+
     
     if(requireLogin()){
         if(Number.isSafeInteger(postId) && postId > 0){
-        loadPost();
-
+            //비동기 작업을 위한 방법
+            //1.async /await
+            //2.
+            //게시글 상세 정보 조회
+            loadPost().then(function (success) {
+        if (success) {
+            
+            loadComments();
+            }
+    });
+      
         //let filteredComments = comments.filter(comment => comment.boardId === postId);
         //renderComments(filteredComments);
     }else {
         document.querySelector("#post-message").textContent = "잘못된 게시글 번호입니다.";
-        document.querySelector("#comments-section").hidden = true;
+       
     }
 }
 

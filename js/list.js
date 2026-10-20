@@ -14,10 +14,10 @@ async function loadPosts(page = currentPage) {
         renderPosts(data.content);
         
         currentPage = data.number;
-totalPages = data.totalPages;
+        totalPages = data.totalPages;
 
-document.querySelector("#list-message").textContent =
-    `전체 ${data.totalElements}개`;
+        document.querySelector("#list-message").textContent =
+            `전체 ${data.totalElements}개`;
         
         let pageNumber = "";
 
