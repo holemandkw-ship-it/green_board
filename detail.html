@@ -6,7 +6,6 @@
         <link rel="stylesheet" href="style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script defer src="js/auth.js"></script>
-        <script defer src="js/storage.js"></script>
         <script defer src="js/render.js"></script>
         <script defer src="js/api.js"></script>
         <script defer src="js/detail.js"></script>
@@ -28,6 +27,7 @@
                 <p id="post-meta" class="meta"></p>
                 <p id="post-content"></p>
                 <p id="post-message"></p>
+                <button id="retry-post" type="button">게시글 다시 로드</button>
             </article>
             <a href="index.html">목록으로</a>
             <section id="comments-section">
@@ -38,7 +38,7 @@
                 </ul>
                 <!--댓글 입력창-->
                 <form id="comment-form">
-                    <lable>댓글 내용</lable>
+                    <label>댓글 내용</label>
                     <textarea id="comment-content" name="content" required></textarea>
                     <button type="submit">댓글 등록</button>
                 </form>

@@ -2,7 +2,14 @@ async function login(event) {
     event.preventDefault();
 
     const form = event.currentTarget;
+    const button = form.querySelector("button[type=submit]");
     const message = document.querySelector("#login-message");
+
+    if (button.disabled) {
+        return;
+    }
+    button.disabled = true;
+    message.textContent = "로그인중..."
 
     const username = form.elements.username.value.trim();
     const password = form.elements.password.value;
@@ -19,11 +26,12 @@ async function login(event) {
         }
 
         localStorage.setItem("accessToken", tokens.accessToken);
-
         location.href = "index.html";
 
     } catch (error) {
         message.textContent = error.message;
+    }finally{
+        button.disabled = false;
     }
 }
 

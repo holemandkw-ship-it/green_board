@@ -17,6 +17,9 @@ function requireLogin() {
 document.querySelector(".logout-button").addEventListener("click", logout)
 
 async function logout() {
+    const button = document.querySelector(".logout-button")
+    if (button.disabled) return
+    button.disabled = true;
     try {
         //const response = await fetch("http://127.0.0.1:8080/api/user/logout", {
          //   method: "POST", 
@@ -38,6 +41,8 @@ async function logout() {
     } catch(error) {
         // #nav-message.textContent -> alert로 대체
         alert(error.message);
+    }finally{
+        button.disabled = false;
     }
 }
 

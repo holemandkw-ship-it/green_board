@@ -3,15 +3,20 @@ const postId = Number(params.get("id"));
 
 // posts 배열에서 사용자가 누른 게시글 찾기
 async function loadPost() {
+    const message = document.querySelector("#comment-message");
+    message.textContent = "게시글을 불러오는중...";
+    const reloadButton = document.querySelector("#retry-post")
     try {
        const post = await apiRequest(`/board/${postId}`);
         renderPost(post);
-        document.querySelector("#post-message").textContent = "";
+        message.textContent = "";
+        reloadButton.hidden = true;
         return true;
     }catch (error) {
         document.querySelector("#post-title").textContent = "게시글 조회 실패";
         document.querySelector("#post-content").textContent = "";
-        document.querySelector("#post-message").textContent = error.message;
+        message.textContent = error.message;
+        reloadButton.hidden = false;
         return false;
        
     }
@@ -74,3 +79,7 @@ document.querySelector("#comment-form").addEventListener("submit",async function
     }
     
 })
+
+document.querySelector("#retry-post").addEventListener("click", function () {
+    loadPost();
+});
